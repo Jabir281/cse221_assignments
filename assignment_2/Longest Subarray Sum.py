@@ -1,15 +1,16 @@
 n, k = map(int, input().split())
-arr = list(map(int, input().split()))
+li = list(map(int, input().split()))
 
-left = 0
+i = 0
 current_sum = 0
-max_length = 0
+max_len = 0
 
-for right in range(n):
-    current_sum += arr[right]
-    while current_sum > k and left <= right:
-        current_sum -= arr[left]
-        left += 1
-    max_length = max(max_length, right - left + 1)
+for j in range(n):
+    current_sum += li[j]
+    while current_sum > k and i <= j:
+        current_sum -= li[i]
+        i += 1
+        len1=j - i + 1
+    max_len = max(max_len, len1)
 
-print(max_length)
+print(max_len)
